@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> Órdenes generadas </h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col"> Tipo de trabajo </th>
+                  <th scope="col"> Prespuesto estimado </th>
+                  <th scope="col"> Tiempo estimado </th>
+                  <th scope="col"> Técnico asignado </th>
+                  <th scope="col"> Registrada en </th>
+                </tr>
+              </thead>
+
+            {% for workOrder in workorders %}
+
+                <tbody>
+                    <tr>
+                        <td>{{ workOrder.typeWork }}</td>
+                        <td>{{ workOrder.budget }}</td>
+                        <td>{{ workOrder.workDuration }}</td>
+                        <td> {{ workOrder.technician }} </td>
+                        <td> {{ workOrder.timeRegister.strftime('%d de %B %Y a las %H:%M:%S') }} </td>
+                    </tr>
+                </tbody>
+            
+            {% endfor %}
+        
+        </table>
+
+            <p> <button> <a href="{{ url_for('addorderwork') }}"> Generar nueva orden </a> </button>
+
+            <button> <a href="{{ url_for ('menutosoft') }}"> Regresar </a> </button>
+
+{% endblock %}

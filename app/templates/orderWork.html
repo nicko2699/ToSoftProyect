@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Generar orden de trabajo </h1>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.typeWork.label }}<br>
+            {{ form.typeWork(size=32) }}
+        </p>
+        <p>
+            {{ form.budget.label }}<br>
+            {{ form.budget(size=32) }}
+        </p>
+        <p>
+            {{ form.workDuration.label }}<br>
+            {{ form.workDuration(size=32 )}}
+        </p>   
+        <p>
+            {{ form.technician.label }}<br>
+            {{ form.technician(size=32)}}
+        </p>
+
+        <p> {{ form.submit() }}
+
+        <button> <a href="{{ url_for ('menutosoft') }}"> Regresar </a> </button>
+
+    </form>
+
+{% endblock %}

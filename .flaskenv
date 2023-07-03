@@ -1,0 +1,2 @@
+FLASK_APP=tosoft.py
+FLASK_DEBUG=1

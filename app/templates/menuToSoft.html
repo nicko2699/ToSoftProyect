@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> Menu ToSoft </h1>
+
+    <div>
+
+        <p> <button> <a href="{{ url_for('addorderwork') }}"> Generar orden de trabajo </a> </button> </p>
+
+        <p> <button> <a href="{{ url_for('showOrdersWork')}} "> Consultar órdenes de trabajo </a> </button> </p>
+
+        <p> <button> <a href="/logout"> Cerrar Sesión </a> </button> </p>
+
+    </div>
+
+{% endblock %}

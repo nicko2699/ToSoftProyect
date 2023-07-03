@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> Órdenes generadas </h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"> Tipo de Servicio </th>
+                    <th scope="col"> Registrada en </th>
+                </tr>
+            </thead>
+        
+            {% for servOrder in servOrders %}
+
+                <tbody>
+                    <tr>
+                        <td> {{ servOrder.typeService }} </td>
+                        <td> {{ servOrder.timeRegister.strftime('%d de %B %Y a las %H:%M:%S') }} </td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+
+        </table>    
+            
+            <p> <button> <a href="{{ url_for('addorder') }}"> Generar nueva orden </a> </button>
+
+            <button> <a href="{{ url_for ('menuclient') }}"> Regresar </a> </button>
+
+{% endblock %}

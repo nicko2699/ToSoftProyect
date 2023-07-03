@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1> Generar orden de servicio </h1>
+
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.typeService.label }}<br>
+            {{ form.typeService(size=32) }}
+        </p>
+
+        <p> {{ form.submit() }}
+
+        <button> <a href="{{ url_for ('menuclient') }}"> Regresar </a> </button>
+
+    </form>
+
+    
+
+{% endblock %}
